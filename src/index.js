@@ -2,11 +2,11 @@ import express from "express";
 import request from "request";
 
 const app = express();
-const router = express.Router();
+// const router = express.Router();
 
 const upDown = (req, res) => {
   const {
-    term: { url }
+    query: { url }
   } = req;
   console.log(url);
 
@@ -26,6 +26,6 @@ const upDown = (req, res) => {
   }
 };
 
-router.get("/", upDown);
+app.get("/", upDown);
 // Codesanbox does not need PORT :)
 app.listen(() => console.log(`Listening!`));
